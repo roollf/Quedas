@@ -1,0 +1,28 @@
+<main>
+  <section class="form-section">
+    <h1>Quedas</h1>
+    <h2>{{ headerTitle }}</h2>
+    <ng-content></ng-content>
+    <div class="btn-wrapper">
+      <button
+        class="btn-primary"
+        (click)="submit()"
+        [disabled]="disablePrimaryBtn"
+      >
+        {{ loginBtn }}
+      </button>
+      <div class="divider">
+        <div></div>
+        <span>ou</span>
+        <div></div>
+      </div>
+      <button class="btn-secondary" (click)="navigate()">
+        {{ createBtn }}
+      </button>
+    </div>
+  </section>
+  <section class="main-section">
+    <h1>Quedas teste</h1>
+    <img />
+  </section>
+</main>
