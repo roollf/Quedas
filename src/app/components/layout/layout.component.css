@@ -10,28 +10,26 @@ main {
   section {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center; */
+    /* justify-content: center; */
     height: 100%;
   }
 
-  .form-section {
+  .navigation-section {
     flex-grow: 0.3;
-    padding: 0 35px;
+    padding: 24px 16px 0 16px;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
 
     h1 {
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 30px;
+      font-size: 28px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 28px;
     }
 
-    h2 {
-      font-size: 16px;
-      font-weight: 500;
-      margin-bottom: 45px;
-    }
-
-    .btn-wrapper {
+    .navigation-wrapper {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -39,7 +37,27 @@ main {
       width: 100%;
       gap: 30px;
 
-      button {
+      div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 10px 12px;
+        gap: 12px;
+        align-self: stretch;
+
+        border-radius: 12px;
+
+        span {
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 20px;
+      
+          color: var(--secondary-text-color);
+        }
+      }
+
+      /* button {
         width: 100%;
         border-radius: 8px;
         font-size: 16px;
@@ -62,7 +80,7 @@ main {
           border: 1px solid var(--primary-color);
           color: var(--primary-color)
         }
-      }
+      } */
 
       .divider {
         display: flex;

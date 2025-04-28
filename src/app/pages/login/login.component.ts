@@ -8,13 +8,12 @@ import {
 } from '@angular/forms';
 import { PrimaryInputComponent } from '../../components/primary-input/primary-input.component';
 import { Router } from '@angular/router';
-import { LoginService } from '../../services/login.service';
+import { LoginService } from '../../services/api/login.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
   imports: [LayoutComponent, ReactiveFormsModule, PrimaryInputComponent],
-  providers: [LoginService, ToastrService],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
@@ -41,7 +40,7 @@ export class LoginComponent {
       .subscribe({
         next: () => this.toastrService.success('Login feito com sucesso!'),
         error: () =>
-          this.toastrService.error('Deu ruim papito, tente novamente!'),
+          this.toastrService.error('Deu ruim, tente novamente!'),
       });
   }
 
