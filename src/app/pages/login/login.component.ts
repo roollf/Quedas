@@ -8,8 +8,8 @@ import {
 } from '@angular/forms';
 import { PrimaryInputComponent } from '../../components/primary-input/primary-input.component';
 import { Router } from '@angular/router';
-import { LoginService } from '../../services/api/login.service';
-import { ToastrService } from 'ngx-toastr';
+// import { LoginService } from '../../services/api/login.service';
+// import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -22,8 +22,8 @@ export class LoginComponent {
 
   constructor(
     private router: Router,
-    private loginService: LoginService,
-    private toastrService: ToastrService
+    // private loginService: LoginService,
+    // private toastrService: ToastrService
   ) {
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -34,15 +34,14 @@ export class LoginComponent {
     });
   }
 
-  submit() {
-    this.loginService
-      .login(this.loginForm.value.email, this.loginForm.value.password)
-      .subscribe({
-        next: () => this.toastrService.success('Login feito com sucesso!'),
-        error: () =>
-          this.toastrService.error('Deu ruim, tente novamente!'),
-      });
-  }
+  // submit() {
+  //   this.loginService
+  //     .login(this.loginForm.value.email, this.loginForm.value.password)
+  //     .subscribe({
+  //       next: () => this.toastrService.success('Login feito com sucesso!'),
+  //       error: () => this.toastrService.error('Deu ruim, tente novamente!'),
+  //     });
+  // }
 
   navigate() {
     this.router.navigate(['/signup']);
