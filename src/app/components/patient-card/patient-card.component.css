@@ -12,28 +12,28 @@ main {
   background: var(--idle-bg-color);
   border: 1px solid var(--idle-border-color);
   border-radius: 6px;
-
-  section {
-    display: flex;
-    flex-direction: column;
-    color: var(--primary-subtext-color);
-
-    h2 {
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 24px;
-    }
-
-    span {
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 20px;
-    }
-  }
-
-  .upper-section {}
-
-  .lower-section {}
 }
+
+section {
+  display: flex;
+  flex-direction: column;
+  color: var(--primary-subtext-color);
+}
+
+h2 {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+span {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.upper-section {}
+
+.lower-section {}

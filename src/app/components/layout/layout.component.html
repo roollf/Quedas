@@ -1,40 +1,21 @@
 <main>
-  <nav class="navigation-section">
+  <section class="navigation-section">
     <h1>Dashboard</h1>
-    <!-- renderizar elementos baseado nas rotas -->
     <div class="buttons-container">
-      <div class="button-container" routerLinkActive="active-button">
-        <img
-          src="svg/management-icon.svg"
-          class="button-icon"
-          routerLinkActive="active-icon"
-        />
-        <a
-          class="button"
-          routerLink="/dashboard"
-          routerLinkActive="active-button"
-          ariaCurrentWhenActive="page"
-        >
-          Dashboard
-        </a>
-      </div>
-      <div class="button-container" routerLinkActive="active-button">
-        <img
-          src="svg/management-icon.svg"
-          class="button-icon"
-          routerLinkActive="active-icon"
-        />
-        <a
-          class="button"
-          routerLink="/management"
-          routerLinkActive="active-button"
-          ariaCurrentWhenActive="page"
-        >
-          Gerenciamento
-        </a>
-      </div>
+      <app-nav-button
+        label="Dashboard"
+        link="/dashboard"
+        iconOn="svg/dashboard-icon-on.svg"
+        iconOff="svg/dashboard-icon-off.svg"
+      />
+      <app-nav-button
+        label="Gerenciamento"
+        link="/management"
+        iconOn="svg/management-icon-on.svg"
+        iconOff="svg/management-icon-off.svg"
+      />
     </div>
-  </nav>
+  </section>
   <section class="main-section">
     <ng-content></ng-content>
   </section>

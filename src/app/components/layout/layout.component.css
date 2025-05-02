@@ -9,6 +9,8 @@ main {
 section {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
   height: 100%;
 }
 
@@ -24,12 +26,8 @@ h1 {
 }
 
 .navigation-section {
-  display: flex;
-  flex-direction: column;
   flex-grow: 0.1;
   padding: 24px 16px 0 16px;
-  align-items: flex-start;
-  align-self: stretch;
 
   border-right: 1px solid var(--primary-color);
 }
@@ -40,50 +38,10 @@ h1 {
   gap: 4px;
 }
 
-.button-container {
-  display: flex;
-  align-items: center;
-  width: 184px;
-  padding: 10px 12px;
-  gap: 12px;
-  align-self: stretch;
-
-  border-radius: 12px;
-}
-
-.button {
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 20px;
-  cursor: pointer;
-  text-decoration: none;
-
-  color: var(--secondary-subtext-color);
-}
-
-.active-button {
-  background: var(--blue-background-color);
-  color: var(--secondary-text-color);
-}
-
-.button-icon {
-  height: 15px;
-  width: 12px;
-}
-
-.active-icon {
-  color: var(--secondary-text-color);
-}
-
 .main-section {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  align-self: stretch;
+  flex-grow: 1;
   padding: 24px 40px;
   gap: 8px;
-  flex-grow: 1;
 
-  background-color: var(--background-color);
+  background-color: var(--gray-background-color);
 }

@@ -1,0 +1,15 @@
+<div
+  class="button-container"
+  routerLinkActive="active-button"
+  #rla="routerLinkActive"
+>
+  <img [src]="rla.isActive ? iconOn : iconOff" class="button-icon" />
+  <a
+    class="button"
+    [routerLink]="link"
+    routerLinkActive="active-button"
+    ariaCurrentWhenActive="page"
+  >
+    {{ label }}
+  </a>
+</div>
