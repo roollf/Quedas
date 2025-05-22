@@ -1,10 +1,11 @@
-<main>
-  <section class="upper-section">
-    <h2>{{ ambientName || "Quarto" }}</h2>
-    <span>{{ patientName || "Nome do paciente" }}</span>
+<main [ngClass]="alertClasses">
+  <section class="upper-section" [ngClass]="{ 'alert-text': alert().alert }">
+    <h2>{{ patientData().ambient || "Quarto" }}</h2>
+    <p>{{ patientData().patient_name || "Nome do paciente" }}</p>
   </section>
-  <section class="lower-section">
-    <h2>Status</h2>
-    <span>{{ status || "Risco de queda" }}</span>
-  </section>
+  <app-patient-status
+    [title]="alert().title"
+    [status]="patientData().alarm_id"
+    [alert]="alert().alert"
+  />
 </main>
