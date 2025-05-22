@@ -1,0 +1,9 @@
+<section class="lower-section" [ngClass]="{ 'alert-text': alert }">
+  <h2>Status</h2>
+  <div class="status-container">
+    <p>
+      {{ title | uppercaseInitial }}
+    </p>
+    <img [src]="iconSrc" alt="{{ title }} ícone" />
+  </div>
+</section>
