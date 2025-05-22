@@ -4,11 +4,10 @@
       <h1>Ambiente</h1>
     </section>
     <section class="patients-section">
-      <app-patient-card />
-      <app-patient-card />
-      <app-patient-card />
-      <app-patient-card />
-      <app-patient-card />
+      @if (cardData$ | async; as cardData) { @for (patientData of cardData;
+      track patientData) {
+      <app-patient-card [patientData]="patientData" />
+      } }
     </section>
   </main>
 </app-layout>
