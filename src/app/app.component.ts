@@ -7,10 +7,4 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent {
-  // title = 'Quedas';
-
-  // exibirNome(event: string) {
-  //   console.log('Nome do usuário', event);
-  // }
-}
+export class AppComponent {}
