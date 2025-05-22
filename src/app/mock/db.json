@@ -1,0 +1,174 @@
+{
+  "ambient": [
+    {
+      "id": 1,
+      "name": "Quarto 101"
+    }
+  ],
+  "bed": [
+    {
+      "id": 1,
+      "name": "Cama 1",
+      "mac_adress": "00-B0-D0-63-C2-26",
+      "power": true,
+      "status": true,
+      "patient_id": 1,
+      "ambient_id": 1,
+      "pause_id": 1
+    },
+    {
+      "id": 2,
+      "name": "Cama 2",
+      "mac_adress": "00-B0-D0-68-C1-23",
+      "power": true,
+      "status": true,
+      "patient_id": 2,
+      "ambient_id": 1,
+      "pause_id": 2
+    },
+    {
+      "id": 3,
+      "name": "Cama 3",
+      "mac_adress": "00-B0-D0-68-C2-27",
+      "power": true,
+      "status": true,
+      "patient_id": 3,
+      "ambient_id": 1,
+      "pause_id": 3
+    }
+  ],
+  "pause": [
+    {
+      "id": 1,
+      "status": false,
+      "created_at": "2025-05-07T12:00:00",
+      "updated_at": "2025-05-07T12:00:00"
+    },
+    {
+      "id": 2,
+      "status": false,
+      "created_at": "2025-05-07T12:30:00",
+      "updated_at": "2025-05-07T12:30:00"
+    },
+    {
+      "id": 3,
+      "status": false,
+      "created_at": "2025-05-13T12:30:00",
+      "updated_at": "2025-05-13T12:30:00"
+    }
+  ],
+  "patient": [
+    {
+      "id": 1,
+      "name": "Carlos Alberto",
+      "weight": 68.0,
+      "illness": "Câncer"
+    },
+    {
+      "id": 2,
+      "name": "Eduardo Nóbrega",
+      "weight": 72.0,
+      "illness": "Nenhuma"
+    },
+    {
+      "id": 3,
+      "name": "Ana Carla",
+      "weight": 70.0,
+      "illness": "Nenhuma"
+    }
+  ],
+  "position": [
+    {
+      "id": 1,
+      "description_id": 2,
+      "alarm_position_id": 2
+    },
+    {
+      "id": 2,
+      "description_id": 2,
+      "alarm_position_id": 2
+    },
+    {
+      "id": 3,
+      "description_id": 3,
+      "alarm_position_id": 1
+    }
+  ],
+  "position_description": [
+    {
+      "id": 1,
+      "name": "sentado"
+    },
+    {
+      "id": 2,
+      "name": "diagonal"
+    },
+    {
+      "id":3,
+      "name": "meio"
+    }
+  ],
+  "alarm_position": [
+    {
+      "id": 1,
+      "name": "sem risco"
+    },
+    {
+      "id": 2,
+      "name": "risco de queda"
+    },
+    {
+      "id": 3,
+      "name": "queda"
+    }
+  ],
+  "bed_has_position": [
+    {
+      "id": 1,
+      "bed_id": 1,
+      "position_id": 1,
+      "created_at": "2025-05-07T12:00:00"
+    },
+    {
+      "id": 2,
+      "bed_id": 2,
+      "position_id": 2,
+      "created_at": "2025-05-07T12:30:00"
+    },
+    {
+      "id": 3,
+      "bed_id": 3,
+      "position_id": 3,
+      "created_at": "2025-05-13T12:30:00"
+    }
+  ],
+  "dashboard": [
+    {
+      "ambient": "Quarto 101",
+      "patient_name": "Carlos Alberto",
+      "power": true,
+      "status": true,
+      "pause": false,
+      "alarm_id": 2,
+      "created_at": "2025-05-07T12:00:00"
+    },
+    {
+      "ambient": "Quarto 101",
+      "patient_name": "Eduardo Nóbrega",
+      "power": true,
+      "status": true,
+      "pause": false,
+      "alarm_id": 3,
+      "created_at": "2025-05-07T12:30:00"
+    },
+    {
+      "ambient": "Quarto 101",
+      "patient_name": "Ana Carla",
+      "power": true,
+      "status": true,
+      "pause": false,
+      "alarm_id": 1,
+      "created_at": "2025-05-13T12:00:00"
+    }
+  ]
+}
