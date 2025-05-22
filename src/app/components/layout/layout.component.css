@@ -39,9 +39,8 @@ h1 {
 }
 
 .main-section {
-  flex-grow: 1;
+  flex-grow: 0.9;
   padding: 24px 40px;
-  gap: 8px;
 
   background-color: var(--gray-background-color);
 }
