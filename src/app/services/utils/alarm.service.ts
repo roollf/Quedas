@@ -34,11 +34,6 @@ export class AlarmService {
 
     if (power) {
       if (pause) {
-        /**
-         * Checar timer da pausa.
-         * Caso timer tenha acabado e o pause continue true, gerar alerta.
-         * Caso contrário, gerar estado de pausado.
-         */
         return this._riskObject;
       }
 
