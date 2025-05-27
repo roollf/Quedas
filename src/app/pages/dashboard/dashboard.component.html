@@ -4,9 +4,9 @@
       <h1>Ambiente</h1>
     </section>
     <section class="patients-section">
-      @if (cardData$ | async; as cardData) { @for (patientData of cardData;
+      @if (cardData$ | async; as cardData) { @for (patientData of cardData.data;
       track patientData) {
-      <app-patient-card [patientData]="patientData" />
+      <app-patient-card-container [patientData]="patientData" />
       } }
     </section>
   </main>
