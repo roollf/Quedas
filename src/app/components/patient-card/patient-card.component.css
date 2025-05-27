@@ -12,33 +12,15 @@ main {
   border-radius: 6px;
 }
 
-section {
+div {
   display: flex;
   flex-direction: column;
   color: var(--primary-subtext-color);
 }
 
-h2 {
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 24px;
-}
-
-p {
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px;
-}
-
-.status-text {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
 .upper-section {}
+
+.lower-section {}
 
 .pause-alert {}
 
@@ -55,3 +37,4 @@ p {
 .alert-text {
   color: var(--white-text-color);
 }
+

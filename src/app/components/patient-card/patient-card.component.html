@@ -1,11 +1,8 @@
 <main [ngClass]="alertClasses">
-  <section class="upper-section" [ngClass]="{ 'alert-text': alert().alert }">
-    <h2>{{ patientData().ambient || "Quarto" }}</h2>
-    <p>{{ patientData().patient_name || "Nome do paciente" }}</p>
-  </section>
-  <app-patient-status
-    [title]="alert().title"
-    [status]="patientData().alarm_id"
-    [alert]="alert().alert"
-  />
+  <div class="upper-section" [ngClass]="{ 'alert-text': isAlertActive }">
+    <ng-content select="[upper-content]" />
+  </div>
+  <div class="lower-section" [ngClass]="{ 'alert-text': isAlertActive }">
+    <ng-content select="[lower-content]" />
+  </div>
 </main>
