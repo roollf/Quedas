@@ -14,7 +14,10 @@ import { AsyncPipe } from '@angular/common';
 import { Observable } from 'rxjs';
 
 // composable
-import { State, withLoadingAndError } from '../../@shared/composables/api/use-http';
+import { toAsyncState } from '../../@shared/composables/api/to-async-state';
+
+// models
+import * as Models from '../../@shared/models';
 
 @Component({
   selector: 'app-management',
@@ -23,9 +26,9 @@ import { State, withLoadingAndError } from '../../@shared/composables/api/use-ht
   styleUrl: './management.component.css',
 })
 export class ManagementComponent {
-  cardData$: Observable<State<[]>>;
+  cardData$: Observable<Models.AsyncState<[]>>;
 
   constructor(private dashboardService: DashboardService) {
-    this.cardData$ = withLoadingAndError<[]>(this.dashboardService.getDashboard());
+    this.cardData$ = toAsyncState<[]>(this.dashboardService.getDashboard());
   }
 }
