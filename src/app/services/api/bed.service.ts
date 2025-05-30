@@ -1,37 +1,46 @@
+// angular
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
+// rxjs
 import { Observable } from 'rxjs';
+
+// environments
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class BedService {
-  readonly json_server_url = 'http://localhost:3000';
+  private readonly _json_server_url = environment.JSON_SERVER_ENDPOINT;
 
   constructor(private httpClient: HttpClient) {}
 
   getBeds(): Observable<[]> {
-    return this.httpClient.get<[]>(`${this.json_server_url}/bed`);
+    return this.httpClient.get<[]>(`${this._json_server_url}bed`);
   }
 
   getBed(bedId: number): Observable<Object> {
-    return this.httpClient.get<Object>(`${this.json_server_url}/bed/${bedId}`);
+    return this.httpClient.get<Object>(`${this._json_server_url}bed/${bedId}`);
   }
 
   createBed(bedData: any): Observable<Object> {
-    return this.httpClient.post<Object>(`${this.json_server_url}/bed`, bedData);
+    return this.httpClient.post<Object>(
+      `${this._json_server_url}bed`,
+      bedData
+    );
   }
 
   updateBed(bedId: number, bedData: any): Observable<Object> {
     return this.httpClient.put<Object>(
-      `${this.json_server_url}/bed/${bedId}`,
+      `${this._json_server_url}bed/${bedId}`,
       bedData
     );
   }
 
   deleteBed(bedId: number): Observable<Object> {
     return this.httpClient.delete<Object>(
-      `${this.json_server_url}/bed/${bedId}`
+      `${this._json_server_url}bed/${bedId}`
     );
   }
 }

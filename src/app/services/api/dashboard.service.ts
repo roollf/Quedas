@@ -5,15 +5,18 @@ import { HttpClient } from '@angular/common/http';
 // rxjs
 import { Observable } from 'rxjs';
 
+// environments
+import { environment } from '../../../environments/environment';
+
 @Injectable({
   providedIn: 'root',
 })
 export class DashboardService {
-  readonly json_server_url = 'http://localhost:3000';
+  private readonly _json_server_url = environment.JSON_SERVER_ENDPOINT;
 
   constructor(private httpClient: HttpClient) {}
 
   getDashboard(): Observable<[]> {
-    return this.httpClient.get<[]>(`${this.json_server_url}/dashboard`);
+    return this.httpClient.get<[]>(`${this._json_server_url}dashboard`);
   }
 }
