@@ -18,7 +18,10 @@ div {
   color: var(--primary-subtext-color);
 }
 
-.upper-section {}
+.upper-section {
+  display: flex;
+  width: 100%;
+}
 
 .lower-section {}
 
