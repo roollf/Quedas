@@ -6,7 +6,7 @@
     <section class="patients-section">
       @if (cardData$ | async; as cardData) { @for (patientData of cardData.data;
       track patientData) {
-      <app-patient-card-container [patientData]="patientData" />
+      <app-patient-card-container-dashboard [patientData]="patientData" />
       } }
     </section>
   </main>

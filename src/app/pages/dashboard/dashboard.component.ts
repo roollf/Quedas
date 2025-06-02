@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 
 // components
 import { LayoutComponent } from '../../components/layout/layout.component';
-import { PatientCardContainer } from '../../containers/patient-card/patient-card.container';
+import { PatientCardContainerDashboard } from '../../containers/patient-card-dashboard/patient-card-dashboard.container';
 
 // services
 import { DashboardService } from '../../services/api/dashboard.service';
@@ -22,7 +22,7 @@ import * as Models from '../../@shared/models';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [LayoutComponent, PatientCardContainer, AsyncPipe],
+  imports: [LayoutComponent, PatientCardContainerDashboard, AsyncPipe],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
 })
