@@ -17,5 +17,5 @@ export const routes: Routes = [
     path: 'management',
     title: 'Gerenciamento',
     component: ManagementComponent,
-  },
+  }
 ];
