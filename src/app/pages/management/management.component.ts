@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 
 // components
 import { LayoutComponent } from '../../components/layout/layout.component';
+import { PatientCardManagementContainer } from '../../containers/patient-card-management/patient-card-management.container';
 
 // services
 import { DashboardService } from '../../services/api/dashboard.service';
@@ -21,7 +22,7 @@ import * as Models from '../../@shared/models';
 
 @Component({
   selector: 'app-management',
-  imports: [LayoutComponent, AsyncPipe],
+  imports: [LayoutComponent, AsyncPipe, PatientCardManagementContainer],
   templateUrl: './management.component.html',
   styleUrl: './management.component.css',
 })

@@ -1,5 +1,13 @@
-@let cardData = cardData$ | async;
-
 <app-layout>
-  <p>{{ cardData?.data }}</p>
+  <main>
+    <section class="header-section">
+      <h1>Pacientes</h1>
+    </section>
+    <section class="patients-section">
+      @if (cardData$ | async; as cardData) { @for (patientData of cardData.data;
+      track patientData) {
+      <app-patient-card-container-management [patientData]="patientData" />
+      } }
+    </section>
+  </main>
 </app-layout>
