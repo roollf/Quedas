@@ -1,0 +1,17 @@
+<app-patient-card
+  [alertClasses]="alertClasses()"
+  [isAlertActive]="alertState().alert"
+  (click)="handleClick()"
+  class="patient-card"
+>
+  <div upper-content class="upper-content-container">
+    <div class="patient-info-container">
+      <h2>{{patientData().ambient || 'Quarto'}}</h2>
+      <p>{{patientData().patient_name || 'Nome do paciente'}}</p>
+    </div>
+    <div class="status-container">
+      <p>{{alertState().title | uppercaseInitial}}</p>
+      <img [src]="iconSrc()" alt="{{alertState().title}} icon" />
+    </div>
+  </div>
+</app-patient-card>
