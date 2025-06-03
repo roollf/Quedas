@@ -8,6 +8,9 @@ import { Observable } from 'rxjs';
 // environments
 import { environment } from '../../../environments/environment';
 
+// interfaces
+import * as Models from '../../@shared/models/';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -16,7 +19,9 @@ export class DashboardService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getDashboard(): Observable<[]> {
-    return this.httpClient.get<[]>(`${this._json_server_url}dashboard`);
+  getDashboard$(): Observable<Models.DashboardData[]> {
+    return this.httpClient.get<Models.DashboardData[]>(
+      `${this._json_server_url}dashboard`
+    );
   }
 }
