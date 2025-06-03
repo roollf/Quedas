@@ -1,5 +1,5 @@
 // angular
-import { Component, computed, input } from '@angular/core';
+import { Component, computed, input, output } from '@angular/core';
 
 // components
 import { PatientCardComponent } from '../../components/patient-card/patient-card.component';
@@ -20,8 +20,9 @@ import * as Models from '../../@shared/models';
   styleUrl: './patient-card-management.container.css',
 })
 export class PatientCardManagementContainer {
-  patientData = input<Models.PatientData>({
+  patientData = input<Models.DashboardData>({
     ambient: '',
+    patient_id: 0,
     patient_name: '',
     power: false,
     status: false,
@@ -29,6 +30,7 @@ export class PatientCardManagementContainer {
     alarm_id: 0,
     created_at: '',
   });
+  cardClick = output<void>();
 
   constructor(private alarmService: AlarmService) {}
 
@@ -46,6 +48,7 @@ export class PatientCardManagementContainer {
       case 1:
         return 'svg/active-icon.svg';
       case 2:
+        return 'svg/triangle-exclamation-icon.svg';
       case 3:
         return 'svg/triangle-exclamation-icon.svg';
       default:
@@ -54,6 +57,6 @@ export class PatientCardManagementContainer {
   });
 
   handleClick() {
-    console.log('clicando no card');
+    this.cardClick.emit();
   }
 }
