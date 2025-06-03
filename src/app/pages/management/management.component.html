@@ -3,11 +3,17 @@
     <section class="header-section">
       <h1>Pacientes</h1>
     </section>
+    @if (patientsQuery.isPending()) { Loading... } @else if
+    (patientsQuery.isError()) { Error: {{ patientsQuery.error().message }}
+    } @else if (patientsQuery.isSuccess()) {
     <section class="patients-section">
-      @if (cardData$ | async; as cardData) { @for (patientData of cardData.data;
-      track patientData) {
-      <app-patient-card-container-management [patientData]="patientData" />
-      } }
+      @for (patient of patientsQuery.data(); track patient) {
+      <app-patient-card-container-management
+        [patientData]="patient"
+        (cardClick)="navigateToDetail(patient.patient_id)"
+      />
+      }
     </section>
+    }
   </main>
 </app-layout>
