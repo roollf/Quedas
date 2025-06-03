@@ -8,6 +8,9 @@ import { Observable } from 'rxjs';
 // environments
 import { environment } from '../../../environments/environment';
 
+// interfaces
+import * as Models from '../../@shared/models';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -16,30 +19,35 @@ export class PatientsService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getPatients() {
-    return this.httpClient.get(`${this._json_server_url}patient`);
+  getPatients$(): Observable<Models.PatientData[]> {
+    return this.httpClient.get<[]>(`${this._json_server_url}patient`);
   }
 
-  getPatient(patientId: number) {
-    return this.httpClient.get(`${this._json_server_url}patient/${patientId}`);
+  getPatient$(patientId: number): Observable<Models.PatientData> {
+    return this.httpClient.get<Models.PatientData>(
+      `${this._json_server_url}patient/${patientId}`
+    );
   }
 
-  createPatient(patientData: any) {
-    return this.httpClient.post(
+  createPatient$(patientData: any): Observable<Models.PatientData> {
+    return this.httpClient.post<Models.PatientData>(
       `${this._json_server_url}patient`,
       patientData
     );
   }
 
-  updatePatient(patientId: number, patientData: any) {
-    return this.httpClient.put(
+  updatePatient$(
+    patientId: number,
+    patientData: any
+  ): Observable<Models.PatientData> {
+    return this.httpClient.put<Models.PatientData>(
       `${this._json_server_url}patient/${patientId}`,
       patientData
     );
   }
 
-  deletePatient(patientId: number) {
-    return this.httpClient.delete(
+  deletePatient$(patientId: number): Observable<Models.PatientData> {
+    return this.httpClient.delete<Models.PatientData>(
       `${this._json_server_url}patient/${patientId}`
     );
   }
