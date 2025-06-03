@@ -20,8 +20,9 @@ import * as Models from '../../@shared/models';
   styleUrl: './patient-card-dashboard.container.css',
 })
 export class PatientCardContainerDashboard {
-  patientData = input<Models.PatientData>({
+  patientData = input<Models.DashboardData>({
     ambient: '',
+    patient_id: 0,
     patient_name: '',
     power: false,
     status: false,
@@ -46,6 +47,7 @@ export class PatientCardContainerDashboard {
       case 1:
         return 'svg/active-icon.svg';
       case 2:
+        return 'svg/triangle-exclamation-icon.svg';
       case 3:
         return 'svg/triangle-exclamation-icon.svg';
       default:
