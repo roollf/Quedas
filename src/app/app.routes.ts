@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ManagementComponent } from './pages/management/management.component';
+import { PatientComponent } from './pages/patient/patient.component';
 
 export const routes: Routes = [
   {
@@ -17,5 +18,10 @@ export const routes: Routes = [
     path: 'management',
     title: 'Gerenciamento',
     component: ManagementComponent,
-  }
+  },
+  {
+    path: 'management/patient/:id',
+    title: 'Patients',
+    component: PatientComponent,
+  },
 ];
