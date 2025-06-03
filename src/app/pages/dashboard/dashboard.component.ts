@@ -8,28 +8,23 @@ import { PatientCardContainerDashboard } from '../../containers/patient-card-das
 // services
 import { DashboardService } from '../../services/api/dashboard.service';
 
-// pipes
-import { AsyncPipe } from '@angular/common';
-
 // rxjs
-import { Observable } from 'rxjs';
+import { lastValueFrom } from 'rxjs';
 
-// composable
-import { toAsyncState } from '../../@shared/composables/api/to-async-state';
-
-// models
-import * as Models from '../../@shared/models';
+// libs
+import { injectQuery } from '@tanstack/angular-query-experimental';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [LayoutComponent, PatientCardContainerDashboard, AsyncPipe],
+  imports: [LayoutComponent, PatientCardContainerDashboard],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
 })
 export class DashboardComponent {
-  cardData$: Observable<Models.AsyncState<[]>>;
+  constructor(private dashboardService: DashboardService) {}
 
-  constructor(private dashboardService: DashboardService) {
-    this.cardData$ = toAsyncState<[]>(this.dashboardService.getDashboard());
-  }
+  readonly patientsQuery = injectQuery(() => ({
+    queryKey: ['patients'],
+    queryFn: () => lastValueFrom(this.dashboardService.getDashboard$()),
+  }));
 }
