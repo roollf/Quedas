@@ -61,20 +61,26 @@
     {
       "id": 1,
       "name": "Carlos Alberto",
+      "gender": "Masculino",
+      "height": 1.72,
       "weight": 68.0,
-      "illness": "Câncer"
+      "note": "Paciente receberá transplante de medula óssea, realizando quimioterapia. Risco de queda médio para alto."
     },
     {
       "id": 2,
       "name": "Eduardo Nóbrega",
+      "gender": "Masculino",
+      "height": 1.70,
       "weight": 72.0,
-      "illness": "Nenhuma"
+      "note": "Nenhuma"
     },
     {
       "id": 3,
       "name": "Ana Carla",
+      "gender": "Feminino",
+      "height": 1.56,
       "weight": 70.0,
-      "illness": "Nenhuma"
+      "note": "Nenhuma"
     }
   ],
   "position": [
@@ -145,6 +151,7 @@
   "dashboard": [
     {
       "ambient": "Quarto 101",
+      "patient_id": 1,
       "patient_name": "Carlos Alberto",
       "power": true,
       "status": true,
@@ -154,6 +161,7 @@
     },
     {
       "ambient": "Quarto 101",
+      "patient_id": 2,
       "patient_name": "Eduardo Nóbrega",
       "power": true,
       "status": true,
@@ -163,6 +171,7 @@
     },
     {
       "ambient": "Quarto 101",
+      "patient_id": 3,
       "patient_name": "Ana Carla",
       "power": true,
       "status": true,
