@@ -39,14 +39,14 @@ export class LoginComponent {
     });
   }
 
-  onSubmit() {
-    // this.loginForm.reset();
-    this.loginMutation.mutate(this.loginForm.value);
-    console.log('Dados do formulário', this.loginForm.value);
-  }
+  // onSubmit() {
+  //   // this.loginForm.reset();
+  //   this.loginMutation.mutate(this.loginForm.value);
+  //   console.log('Dados do formulário', this.loginForm.value);
+  // }
 
-  loginMutation = injectMutation(() => ({
-    mutationFn: (userData: any) =>
-      lastValueFrom(this.authService.login$(userData)),
-  }));
+  // loginMutation = injectMutation(() => ({
+  //   mutationFn: (userData: any) =>
+  //     lastValueFrom(this.authService.login$(userData)),
+  // }));
 }
