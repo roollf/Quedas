@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 // environments
 import { environment } from '../../../environments/environment';
 
-// interfaces
+// models
 import * as Models from '../../@shared/models';
 
 @Injectable({
