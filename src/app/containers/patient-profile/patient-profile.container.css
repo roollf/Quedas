@@ -1,0 +1,105 @@
+.middle-container-style {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 16px;
+}
+
+.content-container.w-70 {
+  width: 70%;
+}
+
+.content-container.w-30 {
+  width: 30%;
+}
+
+.content-subcontainer {
+  display: flex;
+  width: 100%;
+  gap: 10%;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.form-field.w-45 {
+  width: 45%;
+}
+
+.label-style {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.input-style {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  gap: 8px;
+  align-self: stretch;
+
+  border: 1px solid var(--idle-border-color);
+  border-radius: 6px;
+  background-color: var(--idle-bg-color);
+}
+
+.input-style.textarea {
+  resize: none;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-self: stretch;
+  gap: 20px;
+}
+
+.button-container {
+  display: flex;
+  width: 320px;
+  padding: 10px 16px;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 6px;
+  
+  cursor: pointer;
+}
+
+.button-container.save {
+  background: var(--primary-button-bg);
+  border: 1px solid var(--primary-button-border);
+}
+
+.button-container.remove {
+  background: var(--secondary-button-bg);
+  border: 1px solid var(--secondary-button-border);
+}
+
+.button-label {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.button-label.save {
+  color: var(--white-text-color);
+}
+
+.button-label.remove {
+  color: var(--red-text-color);
+}

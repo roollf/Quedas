@@ -1,0 +1,96 @@
+<app-patient-profile>
+  <div upper-content>
+    <!-- imagem de perfil -->
+    <!-- botão para alteração da imagem de perfil -->
+  </div>
+  <div middle-content>
+    <form [formGroup]="patientProfileForm">
+      <div class="middle-container-style">
+        <div style="display: flex; flex-direction: row; gap: 15px">
+          <div class="content-container w-70">
+            <div class="form-field">
+              <label for="patientName" class="label-style">Paciente:</label>
+              <input
+                id="patientName"
+                type="text"
+                formControlName="patientName"
+                class="input-style"
+              />
+            </div>
+            <div class="content-subcontainer">
+              <div class="form-field w-45">
+                <label for="patientHeight" class="label-style">Altura:</label>
+                <input
+                  id="patientHeight"
+                  type="number"
+                  formControlName="patientHeight"
+                  class="input-style"
+                  maxlength="5"
+                />
+              </div>
+              <div class="form-field w-45">
+                <label for="patientWeight" class="label-style">Peso:</label>
+                <input
+                  id="patientWeight"
+                  type="number"
+                  formControlName="patientWeight"
+                  class="input-style"
+                  maxlength="5"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="content-container w-30">
+            <div class="form-field">
+              <label for="patientGender" class="label-style">Sexo:</label>
+              <select
+                id="patientGender"
+                formControlName="patientGender"
+                class="input-style"
+              >
+                @for (gender of genderOptions; track gender) {
+                <option [value]="gender.value">{{gender.label}}</option>
+                }
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="patientStatus" class="label-style"
+                >Monitorar risco de queda:</label
+              >
+              <select
+                id="patientStatus"
+                formControlName="patientStatus"
+                class="input-style"
+              >
+                @for (status of statusOptions; track status) {
+                <option [value]="status.value">{{status.label}}</option>
+                }
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="content-container">
+          <div class="form-field">
+            <label for="patientNote" class="label-style">Observações:</label>
+            <textarea
+              id="patientNote"
+              formControlName="patientNote"
+              class="input-style textarea"
+              rows="6"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div button-content>
+    <div class="buttons-container">
+      <button class="button-container remove">
+        <p class="button-label remove">Remover paciente</p>
+      </button>
+      <button class="button-container save">
+        <p class="button-label save">Salvar informações</p>
+      </button>
+    </div>
+  </div>
+</app-patient-profile>
