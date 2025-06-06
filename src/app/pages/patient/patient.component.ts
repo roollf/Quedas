@@ -1,12 +1,13 @@
 // angular
-import { Component } from '@angular/core';
+import { Component, effect } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 // components
 import { LayoutComponent } from '../../components/layout/layout.component';
+import { PatientProfileContainer } from '../../containers/patient-profile/patient-profile.container';
 
 // services
-import { PatientsService } from '../../services/api/patients.service';
+import { PatientProfileService } from '../../services/api/patient-profile.service';
 
 // rxjs
 import { fromEvent, lastValueFrom, takeUntil } from 'rxjs';
@@ -16,7 +17,7 @@ import { injectQuery } from '@tanstack/angular-query-experimental';
 
 @Component({
   selector: 'app-patient',
-  imports: [LayoutComponent],
+  imports: [LayoutComponent, PatientProfileContainer],
   templateUrl: './patient.component.html',
   styleUrl: './patient.component.css',
 })
@@ -24,10 +25,11 @@ export class PatientComponent {
   patientId: number;
 
   constructor(
-    private patientService: PatientsService,
+    private patientProfileService: PatientProfileService,
     private route: ActivatedRoute
   ) {
     this.patientId = Number(this.route.snapshot.params['id']);
+    effect(() => console.log('Dados do paciente', this.patientQuery.data()));
   }
 
   readonly patientQuery = injectQuery(() => ({
@@ -35,7 +37,9 @@ export class PatientComponent {
     queryFn: (context) => {
       const abort$ = fromEvent(context.signal, 'abort');
       return lastValueFrom(
-        this.patientService.getPatient$(this.patientId).pipe(takeUntil(abort$))
+        this.patientProfileService
+          .getPatientProfile$(this.patientId)
+          .pipe(takeUntil(abort$))
       );
     },
   }));

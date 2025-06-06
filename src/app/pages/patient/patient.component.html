@@ -1,3 +1,9 @@
 <app-layout>
-  <p>working...</p>
+  <!-- @if (patientQuery.isPending()) {Loading...} @else if (patientQuery.isError())
+  {Error: {{ patientQuery.error().message }}} @else if
+  (patientQuery.isSuccess()) {
+  {{ patientQuery.data() }}
+  } -->
+  <app-patient-profile-container [patientData]="patientQuery.data()">
+  </app-patient-profile-container>
 </app-layout>
