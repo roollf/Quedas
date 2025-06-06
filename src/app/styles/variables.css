@@ -8,6 +8,7 @@
   /* Text colors */
   --white-text-color: #FFFFFF;
   --black-text-color: #000000;
+  --red-text-color: #EF4444;
   --primary-text-color: #35354A;
   --secondary-text-color: #294478;
   --primary-subtext-color: #4B5563;
@@ -20,4 +21,10 @@
   --warning-border-color: #D46A21;
   --fall-bg-color: #F53E3E;
   --fall-border-color: #DF4848;
+
+  /* Button colors */
+  --primary-button-bg: #3B82F6;
+  --secondary-button-bg: #FFFFFF;
+  --primary-button-border: #3B82F6;
+  --secondary-button-border: #EF4444;
 }
